@@ -13,4 +13,5 @@ public interface RecipeService {
     void addRecipe(Recipe recipe);
 
     void formatIngredients(Recipe recipe);
+    boolean isValid (Recipe recipe);
 }
