@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="location.href='/recipes/add'"> Click here to add a recipe!</button>
+<table>
+    <thead></thead>
+    <tbody>
+    <tr th:if="${recipeListAttributeName.empty}">
+        <td><strong> No recipes! </strong></td>
+    </tr>
+    <tr th:each="recipe:${recipeListAttributeName}">
+        <td>
+            <!--            name-->
+            <h1><span th:text="${recipe.name}">Name</span></h1>
+            <!--            ingredients-->
+            <h4>Ingredients</h4>
+            <ul th:each="ingredient:${recipe.ingredientsMap}">
+                <li th:text="${ingredient.key + ' : ' + ingredient.value}"/>
+            </ul>
+            <!--            description-->
+            <h4><label for="description">Description</label></h4>
+            <textarea id="description" name="description" rows="4" cols="20" style="resize:none" readonly
+                      th:text="${recipe.description}"></textarea>
+            <!--            preparation steps-->
+            <h4><label for="preparationSteps">Preparation Steps:</label></h4>
+            <textarea id="preparationSteps" name="preparationSteps" rows="4" cols="20" style="resize:none" readonly
+                      th:text="${recipe.preparationSteps}"></textarea>
+            <!--            cooking time-->
+            <h4>Cooking time</h4>
+            <p th:text="${recipe.cookingTime}"></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
