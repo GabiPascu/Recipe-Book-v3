@@ -52,15 +52,20 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public void formatIngredients(Recipe recipe) {
-        if (!recipe.getIngredient1().isEmpty()) {
+        if (!recipe.getIngredient1().isBlank()) {
+            System.out.println("Checked ingredient 1");
             String[] strArr = recipe.getIngredient1().split(",");
             recipe.getIngredientsMap().put(strArr[0], Integer.valueOf(strArr[1]));
         }
-        if (recipe.getIngredient2() != null && !recipe.getIngredient2().isEmpty()) {
+        if (!(recipe.getIngredient2().equals(","))) {
+            System.out.println("Checked ingredient 2");
+            System.out.println(recipe.getIngredient2());
+            System.out.println(recipe.getIngredient2().length());
             String[] strArr = recipe.getIngredient2().split(",");
             recipe.getIngredientsMap().put(strArr[0], Integer.valueOf(strArr[1]));
         }
-        if (recipe.getIngredient3() != null && !recipe.getIngredient3().isEmpty()) {
+        if (!(recipe.getIngredient3().equals(","))) {
+            System.out.println("Checked ingredient 3");
             String[] strArr = recipe.getIngredient3().split(",");
             recipe.getIngredientsMap().put(strArr[0], Integer.valueOf(strArr[1]));
         }
