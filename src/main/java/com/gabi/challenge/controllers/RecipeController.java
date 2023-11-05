@@ -32,8 +32,11 @@ public class RecipeController {
     public String createRecipe(@ModelAttribute Recipe recipe) {
         recipeService.formatIngredients(recipe);
 
-        recipeService.addRecipe(recipe);
-
+        if (recipeService.isValid(recipe)) {
+            recipeService.addRecipe(recipe);
+        } else {
+            System.out.println("Invalid input");
+        }
 
         return "redirect:/recipes";
     }
