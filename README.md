@@ -1,7 +1,7 @@
 # Recipe-Book-v3
 learning mvc and some thymeleaf
 ### What's this?
-- group effort by: Gabi, Dan, Mircea, Sebi -> to figure out Java MVC and Thymeleaf/HTML
+- group effort by: Gabi, Dan, Mircea, Sebi -> to figure out MVC and Thymeleaf/HTML
 
 ### What does it do?
 - basic recipe functional form
