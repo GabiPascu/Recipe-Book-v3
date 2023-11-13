@@ -7,7 +7,7 @@ learning mvc and some thymeleaf
 - basic recipe functional form
 - adding temporary recipes
 - different fields
-- basic validation for: (WIP)
+- basic validation for:
   - At least 2 ingredients
   - Ingredient quantity > 0
   - Cooking time > 0
